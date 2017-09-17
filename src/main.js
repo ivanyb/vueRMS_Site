@@ -34,6 +34,7 @@ import pointlist from './components/site/point/list.vue';
 import homelist from './components/site/home/list.vue';
 import downlist from './components/site/down/list.vue';
 import commonlist from './components/site/common/list.vue';
+import goodslist from './components/site/goods/goodslist.vue';
 
 // 3.0 将vue-router集成到这个项目中来
 import vueRouter from 'vue-router';
@@ -47,7 +48,7 @@ var router = new vueRouter({
 	linkActiveClass :'',
 	routes:[		
 		// {name:'login',path:'/admin/login',component:login,meta:{nologin:true}},  //登录组件
-		{path:'/',redirect:'/site'},
+		{path:'/',redirect:'/site/home/list'},
 		{
 			path:'/site',
 			component:slayout,
@@ -57,7 +58,8 @@ var router = new vueRouter({
 				{name:'pointlist',path:'point/list/',component:pointlist},
 				{name:'homelist',path:'home/list/',component:homelist},
 				{name:'downlist',path:'down/list/',component:downlist},
-				{name:'commonlist',path:'common/list/',component:commonlist}
+				{name:'commonlist',path:'common/list/',component:commonlist},
+				{name:'goodslist',path:'goods/list/',component:goodslist}
 			]
 		}		
 	]

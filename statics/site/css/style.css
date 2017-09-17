@@ -164,3 +164,57 @@ table { border-collapse:collapse; border-spacing:0; }
 	.navbar li p a{ display:inline-block; margin-right:5px; }
 
 /*categroupcontent.vue 提供样式end*/
+
+/*商品列表页面goodslist.vue*/
+/*顶部分类导航菜单*/
+.banner-img{ position:relative; width:100%; height:341px; overflow:hidden; }
+.banner-img img{ min-width:100%; min-height:100%; }
+.banner-nav{ position:relative; width:100%; height:341px; background:#fff; }
+.banner-nav ul{ padding:0px; }
+.banner-nav ul li{ cursor:pointer;position: relative; }
+.banner-nav ul li h3{ position:relative; display:block; padding:0 20px; width:180px; font-weight:normal; height:53px; }
+.banner-nav ul li h3 i{ position:absolute; right:5px; top:18px; width:13px; height:13px; color:#e0e0e0; font-size:13px; }
+.banner-nav ul li h3 span{ line-height:28px; color:#333; font-size:14px; }
+.banner-nav ul li h3 p{ line-height:16px; color:rgba(0,0,0,0.5); font-size:12px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; }
+.banner-nav ul li h3 p span{ line-height:28px; color:rgba(0,0,0,0.5);font-size: 12px; }
+.banner-nav:hover{height: 100%;min-height:341px;z-index: 9998;}
+.banner-nav ul li:hover h3{ background:#d70029; }
+.banner-nav ul li:hover h3 i{ color:#fff; }
+.banner-nav ul li:hover h3 span{ color:#fff; }
+.banner-nav ul li:hover h3 p{ color:rgba(255,255,255,0.5); }
+.banner-nav ul li .item-box{ display:none; position:absolute; top:0;left:220px; bottom:0; width:705px; height:400px; background-color:rgba(0,0,0,0.6); z-index:9999; }
+
+.banner-nav ul li:hover .item-box{ display:block; }
+.banner-nav ul li .item-box dl{ display:block; padding:15px 30px 0; }
+.banner-nav ul li .item-box dl dt{ font-size:14px; font-weight:700; line-height:28px; }
+.banner-nav ul li .item-box dl dd{ font-size:12px; line-height:24px; }
+.banner-nav ul li .item-box dl a{ color:#fff; }
+.banner-nav ul li .item-box dl dd a{ margin-right:5px; }
+
+/*商品按照分类展示列表*/
+.img-list{ margin:-15px 0 0 -15px; *display:inline-block; }
+.img-list:after{ content:"."; display:block; height:0; clear:both; visibility:hidden; }
+.img-list .nodata{ color:#999; line-height:80px; text-align:center; }
+.img-list li{ position:relative; float:left; margin:15px 0 0 15px; width:220px; height:348px;box-sizing: border-box; background:#fff; overflow:auto; _display:inline; }
+.img-list li:hover{border:1px solid red;box-sizing: border-box;width:220px;height:348px;overflow:hidden;}
+.img-list li .img-box{ display:block; position:relative; width:220px; height:220px; overflow:hidden;box-sizing: border-box; }
+.img-list li .img-box .abs-txt{ position:absolute; top:8px; left:0; display:inline-block; padding:0 6px; color:#fff; font-size:12px; line-height:24px; background:#c81623; text-align:center; border-radius:0 3px 3px 0; }
+.img-list li .img-box img{ width:100%; height:100%;}
+.img-list li .info{ display:block; text-align:left; margin:15px; }
+.img-list li .info h3{ display:block; line-height:20px; height:40px; font-size:12px; font-weight:normal; overflow:hidden; }
+.img-list li .info p{ display:block; line-height:28px; color:#999; font-size:12px; }
+.img-list li .info p.price{ padding-top:10px; line-height:18px; }
+.img-list li .info p.price b{ margin-right:2px; color:#f40; font-size:16px; }
+.img-list li .info p strong{ float:right; font-weight:normal; }
+.img-list li .info p span.price{ color:#fb2104; font-size:14px; font-weight:600; }
+.img-list li em{ position:absolute; display:none; margin:-30px auto auto -30px; top:50%; left:50%; width:60px; height:60px; font-style:normal; filter:alpha(Opacity=60); -moz-opacity:0.6;opacity:0.6; }
+.img-list li em i{ color:#fff; font-size:60px; line-height:60px; }
+.img-list li a:hover em{ display:block; }
+.img-list li .abs-bg{ position:absolute; left:0; bottom:0; width:100%; height:50px; background:#000; opacity:0.3; filter:alpha(opacity=30); -moz-opacity:0.3; background:linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0)); }
+.img-list li .remark{ position:absolute; left:0; bottom:0; right:0; width:100%; height:50px; line-height:20px; text-align:left; overflow:hidden; }
+.img-list li .remark h3{ padding:5px 15px 0; color:#fff; font-size:12px; font-weight:normal; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; }
+.img-list li .remark p{ padding:0 15px; color:#eee; font-size:12px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; }
+/*/商品按照分类展示列表*/
+
+/*/商品列表页面*/
+

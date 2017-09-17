@@ -1,8 +1,13 @@
 <template>
     <div class="list">
-          <contentslidtophot title="资源下载" tablename="home"></contentslidtophot>
-
-          <categroupcontent v-for="item in datas" :datas="item"></categroupcontent>
+         <!--学员问题汇总-->
+        <contentslidtophot title="学员问题汇总" tablename="question"></contentslidtophot>
+        <!--重难点专区-->
+        <contentslidtophot title="重难点专区" tablename="point"></contentslidtophot>
+        <!--前端常用功能-->
+        <contentslidtophot title="前端常用功能" tablename="common"></contentslidtophot>
+        <!--资源下载-->
+        <contentslidtophot title="资源下载" tablename="down"></contentslidtophot>
     </div>
 </template>
 
@@ -10,37 +15,10 @@
     // 轮播图，推荐，热门数据展示组件
     import contentslidtophot from '../subcom/contentsildtophot.vue';
 
-    // 一级分类下的所有二级分类文章数据展示组件
-    import categroupcontent from '../subcom/categroupcontent.vue';
-
     export default{ 
         components:{
-            contentslidtophot,
-            categroupcontent
-        }, 
-         data(){
-            return {
-                datas:[]
-            }
-        },
-        methods:{
-            getdatas(){
-                // 获取学员问题汇总数据
-                this.$http.get('/site/article/getarticles/home')
-                .then(res=>{
-                    if(res.data.status == 1){
-                        this.$message.error(res.data.message);
-                        return;
-                    }
-
-                    // 赋值
-                    this.datas = res.data.message;                       
-                });
-            }
-        },
-        created(){
-            this.getdatas();
-        }
+            contentslidtophot            
+        }        
     }
 </script>
 

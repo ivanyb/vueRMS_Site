@@ -8,7 +8,7 @@
                         <div class="head-top">
                             <div class="section">
                                 <div class="left-box">
-                                    <span>知识分享，在于点滴</span>
+                                    <span>知识分享，在于点滴，vuejs+axios+elementUI实现的单页应用程序</span>
                                     <a target="_blank" href="#"></a>
                                     <a target="_blank" href="#"></a>
                                 </div>
@@ -24,12 +24,12 @@
                     <!--菜单-->
                     <div id="menu2" class="nav-box menuhd">
                         <ul>
-                            <li class="index"><a href="#">首页</a></li>
+                            <li class="index"><router-link to="/site/home/list" href="#">首页</router-link></li>
                             <li class="news"><router-link to="/site/question/list">学员问题汇总</router-link></li>
                             <li class="photo"><router-link to="/site/point/list">重难点专区</router-link></li>           
                             <li class="video"><router-link to="/site/common/list">前端常用功能</router-link></li>
                             <li class="down"><router-link to="/site/down/list">资源下载</router-link></li>      
-                            <li class="goods"><a href="#">购物商城</a></li>                 
+                            <li class="goods"><router-link to="/site/goods/list">购物商城</router-link></li>                 
                         </ul>
                     </div>
                     <!--搜索-->
