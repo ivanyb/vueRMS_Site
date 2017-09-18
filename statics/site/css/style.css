@@ -218,3 +218,21 @@ table { border-collapse:collapse; border-spacing:0; }
 
 /*/商品列表页面*/
 
+/*更多商品分类搜索页面*/
+/*类别导航样式*/
+.screen-box{ display:block; position:relative; margin:0 0 15px; padding:0 15px; background:#fff; }
+    .screen-box ul{ padding:10px 0; display:block; font-size:14px; }
+    .screen-box ul h4{ display:inline-block; padding:0 15px; text-align:right; line-height:28px; font-weight:normal; }
+    .screen-box ul li{ display:inline-block; padding:0 15px; line-height:28px; *display:inline; *zoom:1; }
+    .screen-box ul li a{ color:#333; }
+    .screen-box ul li a:hover,.screen-box ul li.selected a{ color:#8CAC52; }
+    
+    .screen-box dl{ margin:0; padding:0; clear:both; display:block; border-top:1px solid #f7f7f7; font-size:12px; }
+	.screen-box dl:after{ clear:none; content:""; display:block; height:0; visibility:hidden; }
+	.screen-box dl:first-child{ border-top:none; }
+	.screen-box dl dt{ display:block; float:left; padding-left:10px; width:100px; color:#555; line-height:40px; }
+	.screen-box dl dd{ position:relative; margin-left:112px; padding-top:6px; overflow:hidden; }
+	.screen-box dl dd a{ display:inline-block; margin:0 6px 6px 0; padding:8px 10px; border:1px solid #fff; line-height:12px; }
+	.screen-box dl dd a.selected{ border-color:#fff; color:#fff; background:#34ad2a; }
+
+/*/更多商品分类搜索页面*/

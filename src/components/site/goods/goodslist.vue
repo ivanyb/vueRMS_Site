@@ -98,8 +98,9 @@
                 <div class="main-tit">
                     <h2 v-text="item.catetitle"></h2>
                     <p>
-                        <a v-for="(subitem,index) in item.level2catelist" :key="index" href="/goods/43.html">{{subitem.subcatetitle}}</a>
-                        <a href="/goods/40.html">更多<i>+</i></a>
+                        <router-link v-for="(subitem,index) in item.level2catelist" :key="index"
+                         v-bind="{to:'/site/goods/more/'+subitem.subcateid}">{{subitem.subcatetitle}}</router-link>
+                        <router-link v-bind="{to:'/site/goods/more/'+item.level1cateid}">更多<i>+</i></router-link>
                     </p>
                 </div>
                 <!--/子类-->
