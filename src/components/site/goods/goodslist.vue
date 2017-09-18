@@ -51,11 +51,11 @@
                         <div class="banner-img">
                             <div id="focus-box" class="focus-box">
                                 <el-carousel :interval="5000" trigger="click" height="341px">
-                                    <el-carousel-item v-for="item in topdata.sliderlist" :key="item.id">
-                                        <a href="/site">
+                              <el-carousel-item v-for="item in topdata.sliderlist" :key="item.id">
+                                <router-link v-bind="{to:'/site/goods/info/'+item.id}">
                                  <img width="705px" height="341px" :src="item.img_url" :alt="item.title">
-                                <h3></h3>
-                                </a>
+                                <h3 v-text="item.title"></h3>
+                                </router-link>
 
                                     </el-carousel-item>
                                 </el-carousel>
@@ -75,7 +75,8 @@
                                     <img :src="item.img_url">
                                 </div>
                                 <div class="txt-box">
-                                    <a href="/goods/show-98.html">{{item.title}}</a>
+                                     <router-link v-bind="{to:'/site/goods/info/'+item.id}">
+                                     {{item.title}}</router-link>
                                     <span>{{item.add_time | datefmt('YYYY-MM-DD')}}</span>
                                 </div>
                             </li>
@@ -109,7 +110,7 @@
                         <ul class="img-list">
                             <li v-for="(goods,index) in item.datas" :key="index">
                                 <div class="warpdiv">
-                                <a href="/goods/show-91.html">
+                                 <router-link v-bind="{to:'/site/goods/info/'+goods.artID}">
                                     <div class="img-box"><img :src="goods.img_url"></div>
                                     <div class="info">
                                         <h3 v-text="goods.artTitle"></h3>
@@ -119,7 +120,7 @@
                                             <span>市场价：<s v-text="goods.market_price"></s></span>
                                         </p>
                                     </div>
-                                </a>
+                                </router-link>
                                 </div>
                             </li>
                         </ul>

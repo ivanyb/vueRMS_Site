@@ -27,9 +27,27 @@
 
 - v4:实现商品分类搜索页面分页数据展示，以及分页功能的实现
 
+- v5:完成goodsinfo.vue中集成商品图片放大jquery插件，实现商品相册图片放大查看（有bug，必须刷新goodsinfo页面才会初始化图片）
+
+- v6:修复goodsinfo页面必须刷新页面才会初始化商品图片放大功bug
+
+```
+    主要原因是：vue渲染页面需要时间，那么jquery插件初始化一定要等到vue页面渲染完毕，可以将jquery插件初始化代码方到
+     setTimeout(()=>{
+          $(this.$refs.zoom1).imgzoon({magnifier:'#magnifier1'});
+     },100);中
+
+     或者
+      this.$nextTick(()=>{                        
+        $(this.$refs.zoom1).imgzoon({magnifier:'#magnifier1'});     
+    },10); 中
+    
+```
+
 ## 三、填坑
 
 ```
+
 
     
 

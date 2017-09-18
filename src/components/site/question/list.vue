@@ -2,7 +2,7 @@
     <div class="list">
           <contentslidtophot title="资源下载" tablename="question"></contentslidtophot>
 
-          <categroupcontent v-for="item in datas" :datas="item"></categroupcontent>
+          <categroupcontent v-for="(item,index) in datas" :datas="item" :key="index"></categroupcontent>
     </div>
 </template>
 

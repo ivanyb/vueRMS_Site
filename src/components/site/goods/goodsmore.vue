@@ -19,7 +19,7 @@
                             <dd>
                                 <router-link v-bind="{to:'/site/goods/more/'+lv1cate.id}">全部</router-link>
 
-                                <router-link v-for="lv2cate in lv1cate.subcates" v-bind="{to:'/site/goods/more/'+lv2cate.id}">{{lv2cate.title}}</router-link>
+                                <router-link v-for="(lv2cate,index) in lv1cate.subcates" :key="index" v-bind="{to:'/site/goods/more/'+lv2cate.id}">{{lv2cate.title}}</router-link>
 
                             </dd>
                         </dl>
@@ -35,7 +35,7 @@
                 <div class="wrapper clearfix">
                     <ul class="img-list">
                         <li v-for="item in goodslist">
-                            <a href="/goods/show-101.html">
+                            <router-link v-bind="{to:'/site/goods/info/'+item.id}">
                                 <div class="img-box">
                                     <img :src="item.img_url">
                                 </div>
@@ -47,7 +47,7 @@
                                         <span>市场价：<s>{{item.market_price}}</s></span>
                                     </p>
                                 </div>
-                            </a>
+                            </router-link>
                         </li>
                     </ul>
 
