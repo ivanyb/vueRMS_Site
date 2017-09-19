@@ -16,9 +16,12 @@
                                 <div id="menu" class="right-box">
                                     <a href="/login.html">登录</a><strong>|</strong>  
                                     <a href="/register.html">注册</a><strong>|</strong>   
+                                                                   
                                     <a href="/cart.html"><i class="iconfont icon-cart"></i>购物车(
-                                        <span id="shoppingCartCount">0</span>)</a>                                
+                                        <span id="shoppingCartCount">0</span>)</a>    
+                                                              
                             </div> 
+                            
                             </div>
                         </div>
                         <div class="head-nav">

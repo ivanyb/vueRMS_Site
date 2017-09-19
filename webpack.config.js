@@ -39,6 +39,9 @@ module.exports={
       //   test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
       //   loader: 'file-loader'
       // },
+      { test: /iview.src.*?js$/,  //按需引入iview
+         loader: 'babel-loader'
+       },
        {
         test: /\.js$/,  // 将.js文件中的es6语法转成es5语法
         loader:'babel-loader',

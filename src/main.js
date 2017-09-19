@@ -15,12 +15,16 @@ Vue.prototype.$http = axios;
 
 // 导入elementui
 import ElementUI from 'element-ui';
-// import '../statics/theme_rms/index.css';
 Vue.use(ElementUI);
+// import '../statics/theme_rms/index.css';
+
+// 将iview中的图钉组件注册成全局组件
+import Affix from 'iview/src/components/affix';
+Vue.component(Affix.name, Affix);
 
 // 美观的滚动条组件
-import EasyScroll from 'easyscroll';
-Vue.use(EasyScroll);
+// import EasyScroll from 'easyscroll';
+// Vue.use(EasyScroll);
 
 // 2.0 导入App.vue的vue对象
 import App from './App.vue'; 
@@ -113,6 +117,7 @@ Vue.filter('datefmt',(input,fmtstring)=>{
 // 5.0 注册mui的css样式
 // import '../statics/mui/css/mui.css';
 // import '../statics/css/site.css';
+// import 'iview/dist/styles/iview.css';
 
 // 5.0 利用Vue对象进行解析渲染
 new Vue({

@@ -103,6 +103,7 @@ table { border-collapse:collapse; border-spacing:0; }
     .header .head-nav .search-box a{ display:block; position:absolute; top:0; right:30px; bottom:0; padding:3px 5px; width:30px; height:30px; line-height:30px; color:#fff; font-size:16px; text-align:center; background:#333; /*border:1px solid #e5e5e5;*/ border-radius:0; cursor:pointer; -webkit-transition:all 0.2s linear; transition:all 0.2s linear; *top:1px; }
     .header .head-nav .search-box a:hover{ background:#34ad2a; border-color:#34ad2a; -webkit-transition:all 0.3s linear; transition:all 0.3s linear; }
     .header .head-nav .search-box a:hover i{ color:#fff !important; }
+/*#menu{background-color: rgba(0,0,0,1);right:30px;position: absolute;}*/
 /*菜单栏反转样式*/
 
 .menuhd{height:48px;display:block;padding:0px;width:100%;margin:0px auto 0 auto;}
@@ -303,5 +304,41 @@ table { border-collapse:collapse; border-spacing:0; }
 .zoomdiv{ position:absolute; top:0; left:0; z-index:100; display:none; width:368px; height:368px; background:#fff; border:1px solid #e8e8e8; text-align:center; overflow:hidden; }
 .jqZoomPup{ position:absolute; top:0; left:0; z-index:10; visibility:hidden; width:20px; height:20px; border:1px solid #aaa; background:#fff; opacity:0.5;-moz-opacity:0.5; -khtml-opacity:0.5; filter:alpha(Opacity=50); }
 
+/*iview组件的Affix图钉组件在顶部固定样式*/
+.ivu-affix{position:fixed;z-index:10;}
+ .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active{
+        background-color: rgba(0,153,229,0.9);
+        color: white;
+    }
+
+
+/*文章评论样式*/
+.comment-box{ position:relative; padding:0 50px 20px; }
+    .comment-box .form-box{ margin:0; padding:15px 0; }
+    .comment-box .form-box .avatar-box{ display:block; float:left; margin:0; padding:0; width:55px; height:55px; border:0; border-radius:55px; background:#fafafa; overflow:hidden; }
+    .comment-box .form-box .avatar-box i{ color:#999; font-size:55px; line-height:1.2em; }
+    .comment-box .form-box .avatar-box img{ width:100%; height:100%; }
+    .comment-box .form-box .conn-box{ position:relative; margin-left:70px; }
+    .comment-box .form-box .conn-box .editor{ position:relative; margin-right:18px; }
+    .comment-box .form-box .conn-box .editor textarea{ display:inline; margin:0; padding:8px; width:100%; height:80px; border:1px solid #e8e8e8; line-height:20px; }
+    .comment-box .form-box .conn-box .subcon{ padding-top:15px; color:#999; font-size:12px; }
+    .comment-box .form-box .conn-box .subcon .submit{ float:right; display:inline-block; padding:0 20px; height:36px; line-height:34px; color:#fff; font-size:12px; background:#38f; vertical-align:middle; cursor:pointer; }
+    .comment-box .form-box .conn-box .subcon strong{ color:#333; font-weight:normal; }
+    .comment-box .form-box .conn-box .subcon .code{ margin-right:5px; padding:7px; width:80px; height:20px; line-height:20px; border:1px solid #e8e8e8; }
+    .comment-box .form-box .conn-box .subcon a img{ vertical-align:middle; }
+    .comment-box .list-box li{ padding:17px 0; border-top:1px solid #f7f7f7; }
+    .comment-box .list-box li .avatar-box{ display:block; float:left; margin:0; padding:0; width:55px; height:55px; border:0; border-radius:55px; background:#fafafa; overflow:hidden; }
+    .comment-box .list-box li .avatar-box i{ color:#999; font-size:55px; line-height:1.2em; }
+    .comment-box .list-box li .avatar-box img{ width:100%; height:100%; }
+    .comment-box .list-box li .inner-box{ position:relative; margin-left:70px; }
+    .comment-box .list-box li .inner-box .info{ padding-bottom:3px; }
+    .comment-box .list-box li .inner-box .info span{ margin-right:5px; color:#999; font-size:12px; }
+    .comment-box .list-box li .inner-box p{ color:#333; font-size:14px; line-height:1.8em; }
+    .comment-box .list-box li .answer-box{ clear:both; margin:10px 0 0 70px; padding:10px; background:#fafafa; border:1px solid #e6e6e6; border-radius:3px; }
+    .comment-box .list-box li .answer-box .info{ margin-bottom:5px; padding:0; color:#1e7bb3; font-size:12px; border:none; }
+    .comment-box .list-box li .answer-box .info span.right{ float:right; color:#999; }
+    .comment-box .list-box li .answer-box p{ color:#555; font-size:14px; line-height:1.8em; }
+
 
 /*/商品详情页面 goodsinfo.vue*/
+

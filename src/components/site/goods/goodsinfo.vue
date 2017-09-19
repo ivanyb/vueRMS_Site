@@ -16,6 +16,7 @@
                 <div class="wrap-box">
                     <!--页面左边-->
                     <div class="left-925">
+                        <!--左边上部商品信息-->
                         <div class="goods-box clearfix">
                             <!--商品图片-->
                             <div class="pic-box">
@@ -114,12 +115,20 @@
                             </div>
                             <!--/商品信息-->
                         </div>
+
+                        <!--左边下部商品图文，和评论-->
+                       
+                        
+                        <goodsinfobottom :content="goodsdata.goodsinfo.content" :id="goodsdata.goodsinfo.id"></goodsinfobottom>
+                    
+                        
                     </div>
                     <!--/页面左边-->
 
                     <!--页面右边-->
                     <div class="left-220">
                         <div class="bg-wrap nobg">
+                            
                             <div class="sidebar-box">
                                 <h4>推荐商品</h4>
                                 <ul class="side-img-list">
@@ -138,6 +147,7 @@
                                     </li>
                                 </ul>
                             </div>
+                            
                         </div>
                     </div>
                     <!--/页面右边-->
@@ -148,7 +158,8 @@
 </template>
 
 <script>
-  
+    import goodsinfobottom from './goodsinfobottom.vue';
+    
     // 导入图片放大镜jquery插件
     import '../../../../statics/site/js/magnifier.js'; 
 
@@ -156,6 +167,9 @@
         // directives:{
         //     imgzoom
         // },
+        components:{
+            goodsinfobottom
+        },
         data() {
             return {
                 shopnumber:1, // 购买商品数量
@@ -214,7 +228,7 @@
 
 </script>
 
-<style scoped>
+<style >
     /*商品图片放大镜样式*/
 
 /* 垂直居中 */
