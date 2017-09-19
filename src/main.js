@@ -41,6 +41,7 @@ import commonlist from './components/site/common/list.vue';
 import goodslist from './components/site/goods/goodslist.vue';
 import goodsmore from './components/site/goods/goodsmore.vue';
 import goodsinfo from './components/site/goods/goodsinfo.vue';
+import car from './components/site/goods/car.vue';
 
 // 3.0 将vue-router集成到这个项目中来
 import vueRouter from 'vue-router';
@@ -67,7 +68,8 @@ var router = new vueRouter({
 				{name:'commonlist',path:'common/list/',component:commonlist},
 				{name:'goodslist',path:'goods/list/',component:goodslist},  //商品首页列表组件
 				{name:'goodsmore',path:'goods/more/:id',component:goodsmore},  //商品更多分类搜索列表页面,id表示分类id
-				{name:'goodsinfo',path:'goods/info/:id',component:goodsinfo}  //商品详情页面id表示商品id
+				{name:'goodsinfo',path:'goods/info/:id',component:goodsinfo},  //商品详情页面id表示商品id
+				{name:'car',path:'goods/car',component:car}
 			]
 		}		
 	]

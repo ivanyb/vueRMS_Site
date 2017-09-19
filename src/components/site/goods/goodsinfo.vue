@@ -97,8 +97,8 @@
                                             <div class="btn-buy" id="buyButton">
                                                 <!--<button class="buy">立即购买</button>-->
                                                 <!--<button class="add">加入购物车</button>-->
-                                                <el-button :plain="true" size="large" type="warning">立即购买</el-button>
-                                                 <el-button type="danger" size="large">加入购物车</el-button>
+                                                <el-button :plain="true" size="large" @click="shopping" type="warning">立即购买</el-button>
+                                                 <el-button type="danger" size="large" @click="addshopcar">加入购物车</el-button>
                                             </div>
                                         </dd>
                                     </dl>
@@ -115,13 +115,9 @@
                             </div>
                             <!--/商品信息-->
                         </div>
-
                         <!--左边下部商品图文，和评论-->
-                       
-                        
                         <goodsinfobottom :content="goodsdata.goodsinfo.content" :id="goodsdata.goodsinfo.id"></goodsinfobottom>
                     
-                        
                     </div>
                     <!--/页面左边-->
 
@@ -182,10 +178,19 @@
                 // console.log(newval);
                
                  this.goodsid = newval.params.id;
-                 this.getgoodsInfo();              
+                 this.getgoodsInfo(); 
             }
         },
         methods: {
+            // 立即购买
+            shopping(){
+                console.log(this.$store.getters.getCarGoodsCount);
+            },
+            // 加入购物车
+            addshopcar(){
+                var obj = {goodsID:this.goodsid,buyCount:this.shopnumber};               
+                this.$store.dispatch(this.$store.state.shopcar.addGoodsFlag,obj);
+            },
             // 商品数量增1和减一
             changeShopNumber(num){
                 this.shopnumber = num;
