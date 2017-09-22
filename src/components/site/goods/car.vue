@@ -26,7 +26,8 @@
                         </div>
                     </div>
                     <!--购物车头部-->
-                    {{values}}
+                    {{values}} <br>
+                    {{idlist}}
                     <!--商品列表-->
                     <div class="cart-box">
                         <input id="jsondata" name="jsondata" type="hidden">
@@ -36,9 +37,9 @@
                                     <th width="48" align="center">
                                        <el-switch    
                                        v-model="isSelected"
-                                       @change="selectChange"                                                              
-                                        on-text="全选"
-                                        off-text="反选">
+                                       @change="selectChange"                      
+                                        on-text="反选"
+                                        off-text="全选">
                                         </el-switch>
                                     </th>
                                     <th align="left" colspan="2">商品信息</th>
@@ -51,7 +52,8 @@
                                        <el-switch
                                         v-model="values[index]"
                                         on-text="已选"
-                                        off-text="未选">
+                                        off-text="未选"                                        
+                                        >
                                         </el-switch>     
                                     </td>
                                     <td width="68">
@@ -96,9 +98,9 @@
                         <div class="right-box">
                            <router-link to="/site/goods/list">
                             <button class="button" >继续购物</button>
-                            </router-link>
-
-                            <button class="submit" >下单结算</button>
+                            </router-link>                            
+                            <button class="submit" @click="setorder">下单结算</button>
+                             
                         </div>
                     </div>
                     <!--购物车底部-->
@@ -121,10 +123,30 @@
                isSelected:false,
                 goodslist:[], //购物商品
                 values:[], //保存商品的选中状态
+                idlist:[], //保存商品id
                 selectedCount:0 //选中商品数量
             }
         },
         methods:{
+            // 下单结算
+            setorder(){
+                // 1.0 获取选中的商品id
+                var ids = [];
+                this.values.forEach((item,index)=>{
+                    if(item){
+                       ids.push(this.goodslist[index].id);
+                    }
+                });
+
+                // 2.0 至少要选择一个商品
+                if(ids.length <=0){
+                    this.$message.error('请选择您要购买的商品');
+                    return;
+                }               
+                
+                // 3.0 导航到下单页面
+                this.$router.push({name:'shopping',params:{ids:ids.join(',')}});
+            },
             // 删除一条数据
             delitem(goodsid){
                 // 删除goodslist数据
@@ -183,6 +205,7 @@
                         //  同步购物车当前商品购买数量
                         item.buycount = buyGoods[item.id];
                         this.values[index] = false;
+                        this.idlist[index] = item.id;
                     });
 
                       // 赋值

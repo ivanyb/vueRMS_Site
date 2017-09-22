@@ -46,19 +46,47 @@
 
 - v7:完成商品详情页面中的评论提交和分页获取评论数据功能开发，其中利用 iview中的Affix实现滚动时tab栏固定在顶部
 
--v8:完成购物车页面功能的开发
+- v8:完成购物车页面功能的开发
 
 ```
     使用vuex结合localStorage管理购物车数据
    
 ```
 
+- v9:购物页面shopping.vue功能实现 
+
+```
+    利用  v-distpicker 完成购物页面上的省市区联动控件 
+            https://distpicker.iline.co/
+    
+```
+
+- v10:完成订单页面api开发，下订单，获取购买商品数据
+
 ## 三、填坑
 
 ```
+    验证：
+    非空验证必须是字符串类型
+    payment_id: [
+                    { required: true, message: '请选择支付方式', trigger: 'change' }
+                ]
+    正确写法：
+     <el-form-item label="" prop="express_id">
+        <el-radio-group v-model="ruleForm.express_id">
+        <el-radio label="1">货到付款</el-radio>
+        <el-radio label="6">在线支付</el-radio>
+        </el-radio-group>
+    </el-form-item>
 
+    错误写法：
+     <el-form-item label="" prop="express_id">
+        <el-radio-group v-model="ruleForm.express_id">
+        <el-radio :label="1">货到付款</el-radio>
+        <el-radio :label="6">在线支付</el-radio>
+        </el-radio-group>
+    </el-form-item>
 
-    
-
+    由于:label="1" 表示一个数字，非空验证不生效，label="1"是字符串类型，非空验证才生效
 
 ```

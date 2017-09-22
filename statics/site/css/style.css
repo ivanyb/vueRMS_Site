@@ -185,7 +185,6 @@ table { border-collapse:collapse; border-spacing:0; }
 .banner-nav ul li:hover h3 span{ color:#fff; }
 .banner-nav ul li:hover h3 p{ color:rgba(255,255,255,0.5); }
 .banner-nav ul li .item-box{ display:none; position:absolute; top:0;left:220px; bottom:0; width:705px; height:400px; background-color:rgba(0,0,0,0.6); z-index:9999; }
-
 .banner-nav ul li:hover .item-box{ display:block; }
 .banner-nav ul li .item-box dl{ display:block; padding:15px 30px 0; }
 .banner-nav ul li .item-box dl dt{ font-size:14px; font-weight:700; line-height:28px; }
@@ -387,3 +386,35 @@ table { border-collapse:collapse; border-spacing:0; }
     .cart-foot .right-box .button{ background:#1e7bb3; }
 
 /*/购物车样式 car.vue*/
+
+/*订单信息填写页面*/
+.address-info.form-box{ margin:0;padding-top: 20px; }
+.buy-foot{ margin:20px 0; font-size:14px; }
+    .buy-foot .left-box{ float:left; }
+	.buy-foot .left-box dl{ clear:both; padding-bottom:10px; line-height:28px; }
+	.buy-foot .left-box dl dt{ color:#6c6c6c; }
+	.buy-foot .left-box dl dd .input{ width:230px; padding:5px; border:1px solid #e0e0e0; }
+	.buy-foot .right-box{ float:right; text-align:right; }
+	.buy-foot .right-box p{ line-height:38px; }
+	.buy-foot .right-box p .price{ color:#f00; font-weight:700; }
+	.buy-foot .right-box p.txt-box{ margin-top:10px; font-size:18px; font-weight:700; }
+	.buy-foot .right-box p.btn-box{ margin-top:20px; }
+    .buy-foot .right-box p.btn-box .btn{ display:inline-block; margin:0 0 0 5px; padding:8px 25px; width:auto; height:auto; line-height:20px; color:#fff; font-size:12px; border:0; background:#d70029; border-radius:3px; cursor:pointer; }
+    .buy-foot .right-box p.btn-box .button{ background:#1e7bb3; }
+    .buy-foot .right-box p.btn-box .submit{ background:#34ad2a; }
+    .buy-foot .right-box p.btn-box .gray{ background:#ddd; }
+    
+/*/订单信息填写页面*
+
+/*下单成功 successpay.vue样式*/
+/*提示信息*/
+.msg-tips{ position:relative; margin:30px auto; padding:30px 0; width:420px; font-size:14px; text-align:left; }
+    .msg-tips .icon{ display:block; float:left; width:60px; height:60px; }
+    .msg-tips .icon i{ margin:0; padding:0; font-size:60px; color:#090; line-height:1em; }
+    .msg-tips .icon.warning i{ color:#f90; }
+    .msg-tips .icon.error i{ color:#f00; }
+    .msg-tips .info{ margin-left:80px; }
+    .msg-tips .info strong{ display:block; padding-bottom:5px; color:#333; font-size:18px; font-weight:normal; line-height:1.3em; }
+    .msg-tips .info p{ line-height:24px; color:#666; font-size:14px; }
+    .msg-tips .info p a{ margin:auto 2px; }
+/*/下单成功 successpay.vue样式*/

@@ -4,6 +4,8 @@ import Vue from 'vue';
 // 导入axios来替代vue-resource进行ajax请求
 import axios from 'axios';
 // 全局请求的基本url
+// Vue.prototype.dataAPI = axios.defaults.baseURL = 'http://139.199.192.48:6060';
+
 Vue.prototype.dataAPI = axios.defaults.baseURL = 'http://127.0.0.1:8899';
 //post请求内容类型
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -42,6 +44,7 @@ import goodslist from './components/site/goods/goodslist.vue';
 import goodsmore from './components/site/goods/goodsmore.vue';
 import goodsinfo from './components/site/goods/goodsinfo.vue';
 import car from './components/site/goods/car.vue';
+import shopping from './components/site/goods/shopping.vue';
 
 // 3.0 将vue-router集成到这个项目中来
 import vueRouter from 'vue-router';
@@ -69,7 +72,8 @@ var router = new vueRouter({
 				{name:'goodslist',path:'goods/list/',component:goodslist},  //商品首页列表组件
 				{name:'goodsmore',path:'goods/more/:id',component:goodsmore},  //商品更多分类搜索列表页面,id表示分类id
 				{name:'goodsinfo',path:'goods/info/:id',component:goodsinfo},  //商品详情页面id表示商品id
-				{name:'car',path:'goods/car',component:car}
+				{name:'car',path:'goods/car',component:car}, //购物车页面
+				{name:'shopping',path:'goods/shopping/:ids',component:shopping}
 			]
 		}		
 	]
@@ -106,9 +110,9 @@ router.beforeEach((to, from, next) => {
 import moment from 'moment';
 Vue.filter('datefmt',(input,fmtstring)=>{
 	return moment(input).format(fmtstring);
-});
+}); 
 
-// 4.0 注册mint-ui
+// 4.0 注册mint-ui 
 // 导入mint-ui的css文件
 // import 'mint-ui/lib/style.min.css';
 // // 导入mint-ui组件对象
@@ -121,6 +125,7 @@ Vue.filter('datefmt',(input,fmtstring)=>{
 // import '../statics/css/site.css';
 // import 'iview/dist/styles/iview.css';
 
+// import '../statics/site/css/style.css';
 // 5.0 利用Vue对象进行解析渲染
 new Vue({
 	el:'#app',

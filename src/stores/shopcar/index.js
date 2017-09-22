@@ -19,7 +19,8 @@ const state = {
     }
     */ 
 	carGoodsObj : {},
-    goodslist:[]
+    goodslist:[],
+    // goodsidList:[] //在购物车中选中的商品id
 }
 
 function hashkey(obj){
