@@ -11,7 +11,7 @@
         <div class="section">
     <div class="wrapper">
         <div class="bg-wrap">
-            <div class="nav-tit">
+            <div class="nav-tit pay">
                 <a class="selected" href="javascript:;">支付中心</a>
             </div>
             

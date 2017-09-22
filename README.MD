@@ -63,6 +63,13 @@
 
 - v10:完成订单页面api开发，下订单，获取购买商品数据
 
+- v11:完成支付二维码生成，支付页面pay.vue的开发
+
+```
+    二维码使用了vue插件：vue-qart
+    使用网址：https://www.npmjs.com/package/vue-qart
+```
+
 ## 三、填坑
 
 ```

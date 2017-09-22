@@ -403,7 +403,7 @@ table { border-collapse:collapse; border-spacing:0; }
     .buy-foot .right-box p.btn-box .button{ background:#1e7bb3; }
     .buy-foot .right-box p.btn-box .submit{ background:#34ad2a; }
     .buy-foot .right-box p.btn-box .gray{ background:#ddd; }
-    
+
 /*/订单信息填写页面*
 
 /*下单成功 successpay.vue样式*/
@@ -417,4 +417,25 @@ table { border-collapse:collapse; border-spacing:0; }
     .msg-tips .info strong{ display:block; padding-bottom:5px; color:#333; font-size:18px; font-weight:normal; line-height:1.3em; }
     .msg-tips .info p{ line-height:24px; color:#666; font-size:14px; }
     .msg-tips .info p a{ margin:auto 2px; }
+
+    .msg-box{ display:block; margin:0; padding:6px; border:1px solid #fbf2b5; background:#fcfbda; }
+    .msg-box i{ display:block; float:left; margin:4px 0 0; font-size:12px; color:#A094A9; width:18px; height:18px; text-align:center; vertical-align:middle; }
+    .msg-box p{ margin-left:18px; line-height:24px; color:#A4A147; font-size:12px; }
+.form-box{ margin:10px auto; padding:20px 0 30px;width: 800px; }
+    .form-box .form-group{ margin:0; padding:5px 0; clear:both; }
+    .form-box .form-group .tips{ margin-left:16%; color:#666; font-size:12px; line-height:20px; }
+    .form-box .form-group dt{ display:block; float:left; padding-right:2%; width:30%; line-height:40px; text-align:right; color:#888; }
+    .form-box .form-group dd{ display:block; position:relative; margin-left:16%; line-height:40px; }
+    .form-box .form-group dd img{ vertical-align:middle; }
+    .form-box .form-group dd .input{ display:inline-block; padding:0 10px; width:50%; height:40px; line-height:20px; border:1px solid #e0e0e0; }
+    .form-box .form-group dd .input.code{ width:80px; }
+    .form-box .form-group dd .select{ display:inline-block; padding:10px; height:40px; line-height:20px; border:1px solid #e0e0e0; }
+    .form-box .form-group dd .textarea{ display:inline-block; padding:10px; width:50%; height:80px; line-height:20px; border:1px solid #e0e0e0; vertical-align:middle; overflow:auto; }
+    .form-box .form-group dd .submit{ display:inline-block; margin:0 0 0 5px; padding:10px 46px; width:auto; height:auto; line-height:20px; color:#fff; font-size:14px; border:1px solid #d70029; background:#d70029; cursor:pointer; }
+    .form-box .form-group dd .button{ display:inline-block; margin:0 0 0 5px; padding:10px 46px; width:auto; height:auto; line-height:20px; color:#666; font-size:14px; border:1px solid #eee; background:#eee; cursor:pointer; }
+    .form-box .form-group dd label.mart{ margin-right:5px; }
+    .form-box .message{margin: 15px 0 0 6%;}
+    .form-box .message span:first-child{color:#666;}
+    .nav-tit.pay{ margin:0 auto; padding:30px 0; text-align:center; color:#333; font-size:16px; line-height:1em; border-bottom:1px solid #e0e0e0; }
+    .nav-tit.pay a:hover, .nav-tit a.selected{font-size: 30px;}
 /*/下单成功 successpay.vue样式*/

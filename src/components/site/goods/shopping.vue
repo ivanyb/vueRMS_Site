@@ -283,12 +283,12 @@
 
                     this.$message({
                         showClose: true,
-                        message: '恭喜你，这是一条成功消息',
+                        message: '下单成功，正在跳转到支付页面',
                         type: 'success',
                         duration:1000,
                         onClose:()=>{
-                            // this.$router.push();
-                            alert('跳转到二维码支付');
+                            this.$router.push({name:'payment',params:{orderid:res.data.message.orderid}});
+                            // alert('跳转到二维码支付'+res.data.message.orderid);
                         }
                         });
                 });

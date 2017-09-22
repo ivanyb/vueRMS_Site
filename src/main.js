@@ -7,6 +7,7 @@ import axios from 'axios';
 // Vue.prototype.dataAPI = axios.defaults.baseURL = 'http://139.199.192.48:6060';
 
 Vue.prototype.dataAPI = axios.defaults.baseURL = 'http://127.0.0.1:8899';
+Vue.prototype.siteServer = 'http://127.0.0.1:5009';
 //post请求内容类型
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
@@ -45,6 +46,10 @@ import goodsmore from './components/site/goods/goodsmore.vue';
 import goodsinfo from './components/site/goods/goodsinfo.vue';
 import car from './components/site/goods/car.vue';
 import shopping from './components/site/goods/shopping.vue';
+import payment from './components/site/goods/payment.vue';
+import pay from './components/pay.vue';
+import successpay from './components/site/goods/successpay.vue';
+
 
 // 3.0 将vue-router集成到这个项目中来
 import vueRouter from 'vue-router';
@@ -56,9 +61,10 @@ import store from './stores/index.js';
 // 3.0.2 定义路由规则
 var router = new vueRouter({
 	linkActiveClass :'',
-	routes:[		
+	routes:[
 		// {name:'login',path:'/admin/login',component:login,meta:{nologin:true}},  //登录组件
 		{path:'/',redirect:'/site/home/list'},
+		{name:'pay',path:'/pay/:orderid/:totalamount',component:pay},
 		{
 			path:'/site',
 			component:slayout,
@@ -73,7 +79,10 @@ var router = new vueRouter({
 				{name:'goodsmore',path:'goods/more/:id',component:goodsmore},  //商品更多分类搜索列表页面,id表示分类id
 				{name:'goodsinfo',path:'goods/info/:id',component:goodsinfo},  //商品详情页面id表示商品id
 				{name:'car',path:'goods/car',component:car}, //购物车页面
-				{name:'shopping',path:'goods/shopping/:ids',component:shopping}
+				{name:'shopping',path:'goods/shopping/:ids',component:shopping}, //订单数据填写下单
+				{name:'payment',path:'goods/payment/:orderid',component:payment}, //支付页面
+				{name:'successpay',path:'goods/successpay',component:successpay}, //支付成功页面
+				
 			]
 		}		
 	]
