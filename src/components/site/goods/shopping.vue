@@ -156,6 +156,7 @@
 </template>
 
 <script>
+    // 省市区联动下拉框
     import VDistpicker from 'v-distpicker';
     var checkArea;
     export default {

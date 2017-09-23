@@ -70,6 +70,9 @@
     使用网址：https://www.npmjs.com/package/vue-qart
 ```
 
+- v13:用jquery二维码插件jqueryqr.js替换vue-qart达到打包体积的大幅度缩小
+
+
 ## 三、填坑
 
 ```

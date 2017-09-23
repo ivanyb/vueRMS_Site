@@ -8,7 +8,7 @@
                         <div class="head-top">
                             <div class="section">
                                 <div class="left-box">
-                                    <span>知识分享，在于点滴，vuejs+axios+elementUI实现的单页应用程序</span>
+                                    <span>知识分享，在于点滴，vuejs+axios+vuex+elementUI实现的单页应用程序</span>
                                     <a target="_blank" href="#"></a>
                                     <a target="_blank" href="#"></a>
                                 </div>

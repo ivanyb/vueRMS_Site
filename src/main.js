@@ -5,6 +5,7 @@ import Vue from 'vue';
 import axios from 'axios';
 // 全局请求的基本url
 // Vue.prototype.dataAPI = axios.defaults.baseURL = 'http://139.199.192.48:6060';
+// Vue.prototype.siteServer = 'http://139.199.192.48/vuermssite';
 
 Vue.prototype.dataAPI = axios.defaults.baseURL = 'http://127.0.0.1:8899';
 Vue.prototype.siteServer = 'http://127.0.0.1:5009';
@@ -12,7 +13,7 @@ Vue.prototype.siteServer = 'http://127.0.0.1:5009';
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 // withCredentials配置为true表示在ajax请求中携带cookie信息，默认是false
-axios.defaults.withCredentials=true;
+axios.defaults.withCredentials = true;
 
 Vue.prototype.$http = axios;
 
@@ -30,7 +31,7 @@ Vue.component(Affix.name, Affix);
 // Vue.use(EasyScroll);
 
 // 2.0 导入App.vue的vue对象
-import App from './App.vue'; 
+import App from './App.vue';
 
 // 导入网站前台组件
 import slayout from './components/site/slayout.vue';
@@ -60,42 +61,42 @@ import store from './stores/index.js';
 
 // 3.0.2 定义路由规则
 var router = new vueRouter({
-	linkActiveClass :'',
-	routes:[
+	linkActiveClass: '',
+	routes: [
 		// {name:'login',path:'/admin/login',component:login,meta:{nologin:true}},  //登录组件
-		{path:'/',redirect:'/site/home/list'},
-		{name:'pay',path:'/pay/:orderid/:totalamount',component:pay},
+		{ path: '/', redirect: '/site/home/list' },
+		{ name: 'pay', path: '/pay/:orderid/:totalamount', component: pay },
 		{
-			path:'/site',
-			component:slayout,
-			children:[
+			path: '/site',
+			component: slayout,
+			children: [
 				// {name:'questionarticlelist',path:'questionarticlelist/',component:questionarticlelist, meta: { menuno:'1-1'}},  //TODO:注意 articlelist/ 后面写上 / 才生效
-				{name:'questionlist',path:'question/list/',component:questionlist},
-				{name:'pointlist',path:'point/list/',component:pointlist},
-				{name:'homelist',path:'home/list/',component:homelist},
-				{name:'downlist',path:'down/list/',component:downlist},
-				{name:'commonlist',path:'common/list/',component:commonlist},
-				{name:'goodslist',path:'goods/list/',component:goodslist},  //商品首页列表组件
-				{name:'goodsmore',path:'goods/more/:id',component:goodsmore},  //商品更多分类搜索列表页面,id表示分类id
-				{name:'goodsinfo',path:'goods/info/:id',component:goodsinfo},  //商品详情页面id表示商品id
-				{name:'car',path:'goods/car',component:car}, //购物车页面
-				{name:'shopping',path:'goods/shopping/:ids',component:shopping}, //订单数据填写下单
-				{name:'payment',path:'goods/payment/:orderid',component:payment}, //支付页面
-				{name:'successpay',path:'goods/successpay',component:successpay}, //支付成功页面
-				
+				{ name: 'questionlist', path: 'question/list/', component: questionlist },
+				{ name: 'pointlist', path: 'point/list/', component: pointlist },
+				{ name: 'homelist', path: 'home/list/', component: homelist },
+				{ name: 'downlist', path: 'down/list/', component: downlist },
+				{ name: 'commonlist', path: 'common/list/', component: commonlist },
+				{ name: 'goodslist', path: 'goods/list/', component: goodslist },  //商品首页列表组件
+				{ name: 'goodsmore', path: 'goods/more/:id', component: goodsmore },  //商品更多分类搜索列表页面,id表示分类id
+				{ name: 'goodsinfo', path: 'goods/info/:id', component: goodsinfo },  //商品详情页面id表示商品id
+				{ name: 'car', path: 'goods/car', component: car }, //购物车页面
+				{ name: 'shopping', path: 'goods/shopping/:ids', component: shopping }, //订单数据填写下单
+				{ name: 'payment', path: 'goods/payment/:orderid', component: payment }, //支付页面
+				{ name: 'successpay', path: 'goods/successpay', component: successpay }, //支付成功页面
+
 			]
-		}		
+		}
 	]
-	});
+});
 
 // 路由钩子,实现菜单的改变给全局变量赋值
 router.beforeEach((to, from, next) => {
 	next();
 	// console.log('meta.menuno='+to.meta.menuno);
 	if (to.meta.menuno) {
-	
+
 		//  store.dispatch(store.state.global.ChangeMenuActiveNoFlag,to.meta.menuno);
-		
+
 	}
 
 	// 检查登录
@@ -112,14 +113,42 @@ router.beforeEach((to, from, next) => {
 	// 	next();
 	// }
 
-	
+
 });
 
 // 全局过滤器
-import moment from 'moment';
-Vue.filter('datefmt',(input,fmtstring)=>{
-	return moment(input).format(fmtstring);
-}); 
+// import moment from 'moment';
+Vue.filter('datefmt', (input, fmtstring) => {
+	// return moment(input).format(fmtstring);
+	return fmtdate(input,fmtstring);
+});
+
+// 格式化日期
+function fmtdate(input, fmtstring) {
+	var now = new Date(input);
+	var y = now.getFullYear();
+	var m = now.getMonth() + 1;
+	m = m < 10 ? '0' + m : m;
+	var d = now.getDate();
+	d = d < 10 ? '0' + d : d;
+	var h = now.getHours();
+	var mm = now.getMinutes();
+	var sec = now.getSeconds();
+
+	var res = y + '-' + m + '-' + d;
+
+	switch (fmtstring) {
+		case 'YYYY-MM-DD':
+			res = y + '-' + m + '-' + d;
+			break;
+
+		case 'YYYY-MM-DD HH:MM:ss':
+			res = y + '-' + m + '-' + d + ' ' + h + ':' + mm + ':' + sec;
+			break;
+	}
+	return res;
+
+}
 
 // 4.0 注册mint-ui 
 // 导入mint-ui的css文件
@@ -137,10 +166,10 @@ Vue.filter('datefmt',(input,fmtstring)=>{
 // import '../statics/site/css/style.css';
 // 5.0 利用Vue对象进行解析渲染
 new Vue({
-	el:'#app',
+	el: '#app',
 	// 使用路由对象实例
-	router:router,
+	router: router,
 	store,
 	// render:function(create){create(App)} //es5的写法
-	render:c=>c(App)  // es6的函数写法 =>：goes to
+	render: c => c(App)  // es6的函数写法 =>：goes to
 });

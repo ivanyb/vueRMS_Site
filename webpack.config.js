@@ -1,5 +1,6 @@
 var htmlwp = require('html-webpack-plugin');
 var webpack = require('webpack');
+var path = require('path');
 
 //分离css，此组件能将所有import的css文件打包到一个css中
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -7,10 +8,11 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports={
    entry:{
     build:'./src/main.js',// build 可以随意写
-    vendor1:['vue','axios','vue-router'],  //vue相关的打包到vendor1中
+    vendor1:['vue','axios','vue-router','vuex'],  //vue相关的打包到vendor1中
     vendor2:['element-ui'], //UI组件 相关的打包到vendor2中
-    vendor3:['moment'],
-    vendor4:['jquery']
+    // vendor3:[],
+    vendor4:['jquery'],
+    vendor5:['v-distpicker']
   },  //指定打包的入口文件
   output:{
   	path : __dirname+'/dist',  // 注意：webpack1.14.0 要求这个路径是一个绝对路径
@@ -24,7 +26,7 @@ module.exports={
           // webpack 使用 jQuery，如果是自行下载的
           // 'jquery': path.resolve(__dirname, '../src/assets/libs/jquery/jquery.min'),
           // 如果使用NPM安装的jQuery
-          'jquery': 'jquery' 
+          'jquery': 'jquery'       
       }
   },
   module:{
@@ -80,17 +82,17 @@ module.exports={
         }),
         new webpack.ProvidePlugin({
           $: "jquery",
-          jQuery: "jquery"
+          jQuery: "jquery"         
       }),
       // 代码压缩
-    //    new webpack.optimize.UglifyJsPlugin({
-    //     compress: {
-    //       warnings: false
-    //     }
-    // }),
+       new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+    }),
        new webpack.optimize.CommonsChunkPlugin({
           // 这里写的时候要和定义的时候相反，也就是定义的时候是先定义vendor1，那么在使用的时候就要后使用vendor1
-            names: ['vendor4','vendor3','vendor2','vendor1']  
+            names: ['vendor5','vendor4','vendor2','vendor1']  
         }),
         new ExtractTextPlugin("site.css"),  //打包完成后最终输出一个名称叫做site.css的文件到dist中
     ]

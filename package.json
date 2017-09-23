@@ -38,11 +38,8 @@
     "element-ui": "^1.4.4",
     "iview": "^2.3.2",
     "jquery": "^3.2.1",
-    "moment": "^2.18.1",
     "v-distpicker": "^1.0.8",
     "vue": "^2.2.6",
-    "vue-qart": "^2.1.0",
-    "vue-quill-editor": "^2.3.2",
     "vue-router": "^2.3.1",
     "vuex": "^2.4.0"
   }

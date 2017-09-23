@@ -16,14 +16,10 @@
                     </div>
                     <!--确认订单-->
                     <!--商品订单-->
-                    <div class="form-box">
+                    <div class="form-box payment">
                     <el-row >
                         <!--支付二维码-->
-                        <el-col :offset="9" :span="12">
-                            <vue-qrt :config="config" 
-                            :downloadButton="downloadButton"></vue-qrt>
-                        </el-col>
-                    </el-row>
+                       <el-col :span="16">                      
                     <el-row >
                         <el-col :span="12">
                              <dl class="form-group">
@@ -43,7 +39,8 @@
                         <el-col :span="12">
                               <dl class="form-group">
                             <dt>送货地址：</dt>
-                            <dd>{{orderinfo.area}} {{orderinfo.address}}</dd>
+                            <dd>{{orderinfo.area}} {{orderinfo.address}}                                
+                            </dd>
                         </dl>
                         </el-col>
                         <el-col :span="12">
@@ -71,6 +68,13 @@
                         <span>备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：</span>                    
                         <span>{{orderinfo.message}}</span>
                         </div>
+                         </el-col>
+                        <el-col :span="8">
+                          <div id="container">
+                            <canvas width="200" height="200"></canvas>
+                        </div>
+                        </el-col>   
+                    </el-row>
                   </div>
                     <!--/商品订单-->
                     <!--/确认订单-->
@@ -81,20 +85,19 @@
 </template>
 
 <script>
-    import VueQrt from 'vue-qart'
-
-    var setItv;
+    // import VueQrt from 'vue-qart'
+    import '../../../../statics/site/js/jqueryqr.js'; 
 
     export default {
         components:{
-            VueQrt
+            // VueQrt
         },
         data() {
             return {
-                orderid: this.$route.params.orderid,  //订单id
+                orderid:0,  //订单id
                 orderinfo: {},
                  config: {
-                    value: this.siteServer+'/pay/'+this.$route.params.orderid,
+                    value: '',
                     imagePath: '../../../../statics/imgs/logo.png',
                     filter: 'color'
                 },
@@ -111,6 +114,18 @@
                         }
 
                         this.orderinfo = res.data.message[0];
+
+                        this.config.value = this.siteServer+'/#/pay/'+this.orderid+'/'+this.orderinfo.order_amount
+                        
+                        // 生成二维码
+                          //文字logo
+                            $("#container").erweima({
+                                label: '黑马商城扫码支付',
+                                size:300,
+                                text:this.config.value
+                            });
+
+
                     });
             },
             checkPayStatus(){
@@ -131,6 +146,8 @@
             }
         },
         created() {
+            this.orderid = this.$route.params.orderid;
+
             this.getorder();
 
             this.checkPayStatus();
