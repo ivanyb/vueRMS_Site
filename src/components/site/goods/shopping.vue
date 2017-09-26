@@ -247,7 +247,7 @@
             // 获取购买的商品清单数据
             getgoodslist(){
                 // 获取vuex中的购物车商品购买数量
-              var carGoods =  this.$store.getters.getCarGoods;
+              this.ruleForm.cargoodsobj =  this.$store.getters.getCarGoods;
 
                 this.$http.get('/site/validate/order/getgoodslist/'+this.$route.params.ids)
                 .then(res=>{
@@ -257,14 +257,14 @@
                     }
 
                     res.data.message.forEach(item=>{
-                        item.buycount = carGoods[item.id];
-                        item.totalamount = carGoods[item.id] * item.sell_price;
+                        item.buycount = this.ruleForm.cargoodsobj[item.id];
+                        item.totalamount = this.ruleForm.cargoodsobj[item.id] * item.sell_price;
 
                         // 叠加购买商品总数
-                        this.ruleForm.goodsCount += carGoods[item.id];
+                        this.ruleForm.goodsCount += this.ruleForm.cargoodsobj[item.id];
                         // 叠加购买商品总金额
                         this.ruleForm.goodsAmount+= item.totalamount;
-                    })
+                    });
 
                     this.goodslist = res.data.message;
                 });
@@ -276,7 +276,7 @@
                 //    console.log(this.$refs['ruleForm'].rules);
             },
             setorder(){
-                this.cargoodsobj =  this.$store.getters.getCarGoods;
+                // this.cargoodsobj =  this.$store.getters.getCarGoods;
 
                 this.$http.post('/site/validate/order/setorder',this.ruleForm)
                 .then(res=>{

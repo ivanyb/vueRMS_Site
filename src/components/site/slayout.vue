@@ -161,6 +161,7 @@
         methods:{
             logout(){               
                  this.$store.dispatch(this.$store.state.global.isloginedFlag,0);
+                 this.$router.push({name:'login'});
             }
         },
         created() {

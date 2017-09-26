@@ -120,12 +120,21 @@
                                 <!--<a class="btn-pay" href="/payment.html?action=confirm&amp;order_no=B17092616154914">去付款</a>-->
                                 <router-link class="btn-pay" v-if="(orderinfo.status<=1)"
                                  v-bind="{to:'/site/goods/payment/'+orderinfo.id}">去付款</router-link>
+
+                                 <a class="btn-pay" href="javascript:void(0)" v-if="(orderinfo.status==3)"
+                                  @click="complate(orderinfo.id)">签收</a>
                             </dd>
                         </dl>
                         <dl class="form-group">
                             <dt>订单状态：</dt>
                             <dd>
                                 {{orderinfo.statusName}}
+                            </dd>
+                        </dl>
+                         <dl class="form-group">
+                            <dt>快递单号：</dt>
+                            <dd>
+                                {{orderinfo.express_no}}
                             </dd>
                         </dl>
 
@@ -225,7 +234,18 @@
             }
         },
         methods: {
-              logout(){
+            complate(orderid){
+                 this.$http.get('/site/validate/order/complate/'+orderid)
+                .then(res=>{
+                    if(res.data.status ==1){
+                        this.$message.error(res.data.message);
+                        return;
+                    }
+                   this.getorderdetial();
+                });
+
+            },
+            logout(){
                 this.$store.dispatch(this.$store.state.global.isloginedFlag,0);
                 this.$router.push({name:'login'});
             },

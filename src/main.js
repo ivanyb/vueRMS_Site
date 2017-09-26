@@ -88,14 +88,14 @@ var router = new vueRouter({
 				{ name: 'goodsmore', path: 'goods/more/:id', component: goodsmore },  //商品更多分类搜索列表页面,id表示分类id
 				{ name: 'goodsinfo', path: 'goods/info/:id', component: goodsinfo },  //商品详情页面id表示商品id
 				{ name: 'car', path: 'goods/car', component: car }, //购物车页面
-				{ name: 'shopping', path: 'goods/shopping/:ids', component: shopping }, //订单数据填写下单
-				{ name: 'payment', path: 'goods/payment/:orderid', component: payment }, //支付页面
+				{ name: 'shopping', path: 'goods/shopping/:ids', component: shopping,meta:{checklogin:true} }, //订单数据填写下单
+				{ name: 'payment', path: 'goods/payment/:orderid', component: payment,meta:{checklogin:true} }, //支付页面
 				{ name: 'successpay', path: 'goods/successpay', component: successpay }, //支付成功页面
 				{ name: 'register', path: 'account/register', component: register }, //注册页面
 				{ name: 'login', path: 'account/login', component: login }, //注册页面
-				{ name: 'membercenter', path: 'member/center', component: membercenter }, //会员中心
-				{ name: 'orderlist', path: 'member/orderlist', component: orderlist }, //我的订单
-				{ name: 'orderinfo', path: 'member/orderinfo/:orderid', component: orderinfo }, //订单详情
+				{ name: 'membercenter', path: 'member/center', component: membercenter,meta:{checklogin:true} }, //会员中心
+				{ name: 'orderlist', path: 'member/orderlist', component: orderlist,meta:{checklogin:true} }, //我的订单
+				{ name: 'orderinfo', path: 'member/orderinfo/:orderid', component: orderinfo,meta:{checklogin:true} }, //订单详情
 				
 			]
 		}		
@@ -104,13 +104,24 @@ var router = new vueRouter({
 
 // 路由钩子,实现菜单的改变给全局变量赋值
 router.beforeEach((to, from, next) => {
-	next();
-	// console.log('meta.menuno='+to.meta.menuno);
-	if (to.meta.menuno) {
-
+	// 如果路由元数据中没有设置checklogin:true则表示要检查登录
+	if (to.meta.checklogin) {
 		//  store.dispatch(store.state.global.ChangeMenuActiveNoFlag,to.meta.menuno);
 
+		axios.get('/site/account/islogin').then(res=>{		
+			if(res.data.code =='nologin'){	
+				store.dispatch(store.state.global.isloginedFlag,0);	
+				router.push({name:'login'});				
+			}
+			if(res.data.code =='logined'){
+				 next();
+			}
+		});
+	}else{
+		next();
 	}
+
+	
 
 	// 检查登录
 	// if(!to.meta.nologin){//如果路由元数据中没有设置nologin:true则表示要检查登录
