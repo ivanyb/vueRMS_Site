@@ -213,7 +213,8 @@
                     payment_id: '6',  //支付方式
                     express_id: '1', //配送方式
                     message:'', //备注信息
-                    goodsids:this.$route.params.ids //购买商品的id字符串，用逗号隔开
+                    goodsids:this.$route.params.ids, //购买商品的id字符串，用逗号隔开
+                    cargoodsobj:{}
                 },
                 rules: {
                     accept_name: [
@@ -275,6 +276,8 @@
                 //    console.log(this.$refs['ruleForm'].rules);
             },
             setorder(){
+                this.cargoodsobj =  this.$store.getters.getCarGoods;
+
                 this.$http.post('/site/validate/order/setorder',this.ruleForm)
                 .then(res=>{
                     if(res.data.status ==1){

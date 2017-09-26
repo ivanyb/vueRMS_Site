@@ -72,6 +72,12 @@
 
 - v13:用jquery二维码插件jqueryqr.js替换vue-qart达到打包体积的大幅度缩小
 
+```
+    jquery二维码插件： http://www.jq22.com/jquery-info4094 
+
+```
+
+- v14:完成网站会员注册，登录，会员中心的我的订单列表，订单明细，订单取消功能，vuex登录状态管理
 
 ## 三、填坑
 

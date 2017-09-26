@@ -51,6 +51,14 @@ import payment from './components/site/goods/payment.vue';
 import pay from './components/pay.vue';
 import successpay from './components/site/goods/successpay.vue';
 
+// 登录注册
+import register from './components/site/account/register.vue';
+import login from './components/site/account/login.vue';
+
+// 会员中心
+import membercenter from './components/site/member/center.vue';
+import orderlist from './components/site/member/orderlist.vue';
+import orderinfo from './components/site/member/orderinfo.vue';
 
 // 3.0 将vue-router集成到这个项目中来
 import vueRouter from 'vue-router';
@@ -83,9 +91,14 @@ var router = new vueRouter({
 				{ name: 'shopping', path: 'goods/shopping/:ids', component: shopping }, //订单数据填写下单
 				{ name: 'payment', path: 'goods/payment/:orderid', component: payment }, //支付页面
 				{ name: 'successpay', path: 'goods/successpay', component: successpay }, //支付成功页面
-
+				{ name: 'register', path: 'account/register', component: register }, //注册页面
+				{ name: 'login', path: 'account/login', component: login }, //注册页面
+				{ name: 'membercenter', path: 'member/center', component: membercenter }, //会员中心
+				{ name: 'orderlist', path: 'member/orderlist', component: orderlist }, //我的订单
+				{ name: 'orderinfo', path: 'member/orderinfo/:orderid', component: orderinfo }, //订单详情
+				
 			]
-		}
+		}		
 	]
 });
 

@@ -18,7 +18,7 @@
 
 		moveWidth : null,//如果设置了移动盒子的宽度，则不计算缩放比例
 
-		zoom : 4,//缩放比例
+		zoom : 3,//缩放比例
 
 		thumbnail : ".magnifier-line > ul",//缩略图容器
 

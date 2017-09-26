@@ -441,3 +441,95 @@ table { border-collapse:collapse; border-spacing:0; }
 
     .form-box.payment{ margin:10px auto; padding:20px 0 30px;width: 1024px; }
 /*/下单成功 successpay.vue样式*/
+
+/*注册页面*/
+.form-box.full{
+    width: 500px;
+    margin: 0 auto;
+}
+/*/注册页面*/
+
+/*会员登录样式*/
+.login-box{ margin:50px auto 0; padding-bottom:50px; width:343px; overflow:hidden; }
+    .login-box .input-box{ position:relative; display:inline-block; margin-bottom:20px; padding:0 10px; width:320px; border:1px solid #e5e5e5; height:42px; line-height:22px; color:#333; font-size:14px; overflow:hidden; }
+    .login-box .input-box input{ padding:12px 0; width:100%; height:20px; line-height:20px; font-size:14px; }
+    .login-box .remember-box{ margin-bottom:30px; height:20px; line-height:20px; color:#909090; font-size:14px; }
+    .login-box .remember-box input{ vertical-align:middle; }
+    .login-box .remember-box label{ margin-right:7px; cursor:pointer; vertical-align:middle; }
+    .login-box .remember-box a{ color:#00a7ea; vertical-align:middle; }
+    .login-box .btn-box{ display:block; margin-bottom:20px; height:42px; }
+    .login-box .btn-box input{ display:inline-block; width:342px; height:42px; line-height:42px; background:#6caa4b; color:#fff; cursor:pointer; font-size:14px; text-align:center; }
+    .login-box .tip-box{ display:block; text-align:center; height:20px; line-height:20px; color:#f90; font-size:13px; }
+    .login-box .oatuh-box{ clear:both; padding-top:15px; }
+    .login-box .oatuh-box h3{ display:block; margin-bottom:10px; color:#666; font-size:14px; line-height:30px; height:30px; font-weight:normal; }
+    .login-box .oatuh-box p{ margin-left:-25px; }
+    .login-box .oatuh-box p a{ display:block; float:left; margin:0 0 10px 25px; _display:inline; _zoom:1; }
+    .login-box .oatuh-box p a img{ width:38px; height:38px; }
+/*/会员登录样式*/
+
+/*会员头像容器*/
+.avatar-box{ padding:10px 15px; border-bottom:1px solid #e0e0e0; height:60px; background:#fafafa; }
+    .avatar-box .img-box{ position:relative; display:block; float:left; margin-right:10px; width:60px; height:60px; border-radius:60px; background:#fff; text-align:center; overflow:hidden; }
+    .avatar-box .img-box img{ padding:2px; width:54px; height:54px; border:1px solid #f5f5f5; border-radius:60px; background:#fff;  }
+    .avatar-box .img-box i{ color:#ccc; font-size:54px; line-height:78px; background:#fff; }
+    .avatar-box h3{ margin:0; color:#333; font-size:14px; font-weight:normal; line-height:32px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; }
+    .avatar-box p{ color:#666; font-size:12px; line-height:20px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; }
+    .avatar-box p b{ color:#23ac38; font-weight:normal; }
+/*会员中心导航*/
+.center-nav{ padding:15px 20px 10px; }
+    .center-nav ul li{ padding:0; overflow:hidden; }
+    .center-nav ul li h2{ margin-bottom:8px; color:#333; font-size:14px; font-weight:normal; line-height:20px; }
+    .center-nav ul li h2 i{ display:inline-block; margin-left:5px; color:#666; font-size:14px; line-height:20px; }
+    .center-nav ul li h2 span{ font-weight:300; }
+    .center-nav ul li .list{ margin:0 0 15px 26px; font-size:12px; }
+    .center-nav ul li .list p{ margin-top:5px; }
+    .center-nav ul li .list a{ display:block; height:24px; line-height:24px; color:#757575; }
+    .center-nav ul li .list a i{ float:right; line-height:24px; color:#999; font-size:12px; }
+    .center-nav ul li.selected .list a,.center-nav ul li .list a:hover{ color:#23ac38; }
+.center-head{ margin:15px 50px 0; padding:15px; background:#fafafa; }
+    .center-head .img-box{ display:block; float:left; width:116px; height:116px; text-align:center; border-radius:110px; background:#fff; overflow:hidden; }
+    .center-head .img-box img{ padding:2px; width:110px; height:110px; border:1px solid #f5f5f5; border-radius:110px; background:#fff; }
+    .center-head .img-box i{ color:#ccc; font-size:110px; line-height:1.3em; }
+    .center-head .list-box{ position:relative; display:block; margin-left:135px; }
+    .center-head .list-box h3{ display:block; color:#333; font-size:16px; font-weight:normal; line-height:42px; }
+    .center-head .list-box ul:after{ content:"."; display:block; height:0; clear:both; visibility:hidden; }
+    .center-head .list-box ul li{ display:block; float:left; width:33.32%; color:#848484; font-size:14px; line-height:32px; }
+    .center-head .list-box ul li p{ text-align:center; }
+    .center-head .list-box ul li .link-btn{ display:inline-block; padding:5px 15px; color:#fff; font-size:12px; line-height:18px; background:#6caa4b; vertical-align:middle; }
+.center-info{ position:relative; margin:0 50px 0; padding:15px 30px; background:#fff; }
+    .center-info ul:after{ content:"."; display:block; height:0; clear:both; visibility:hidden; }
+    .center-info ul li{ display:block; float:left; width:50%; _width:49.8%; line-height:30px; color:#999; }
+.center-tit{ margin:0 50px; padding:10px 15px; background:#fafafa; line-height:24px; }
+    .center-tit span{ float:right; font-size:12px; }
+    .center-tit h3{ color:#000; font-size:14px; font-weight:normal; }
+    .center-tit h3 i{ margin-right:5px; font-size:14px; }
+
+/*交易订单*/
+/*表格样式*/
+.form-box1{ margin:0 50px; padding:20px 0 30px; }
+.table-wrap{ margin:0 50px 20px; }
+.ftable{ margin:15px 0; width:100%; border:1px solid #f0f0f0; background:#fff; }
+.mtable{ margin:15px 0; width:100%; background:#fff; _width:auto; }
+	.mtable th,.ftable th{ padding:0.8em; color:#6e717a; font-size:13px; font-weight:400; background:#fbfbfb; border-bottom:1px solid #e8e8e8; }
+	.mtable td,.ftable td{ padding:0.8em; color:#333; font-size:13px; border-bottom:1px solid #F3F3F3; }
+	.ftable td .img{ padding:1px; width:60px; height:60px; border:1px solid #e8e8e8; }
+	.ftable td s{ color:#999; text-decoration:line-through; }
+	.mtable .tr_odd_bg,.ftable .tr_odd_bg{ background:#f9f9f9; }
+/*/交易订单*/
+
+/*物流样式*/
+.accept-box{ margin-bottom:50px; padding:0; background:#fff; border:1px solid #f0f0f0; }
+	.accept-box dl{ padding:0 !important; }
+	.accept-box dl.head{ position:relative; margin:0; padding:0; background:#fbfbfb; border-bottom:1px solid #e8e8e8; }
+    .accept-box dl.head dd{ margin-left:10px; }
+	.accept-box dl.head .btn-pay{ position:absolute; top:6px; right:6px; display:block; padding:0 15px; color:#fff; font-size:12px; height:24px; line-height:24px; background:#52A152; border:1px solid #417F41; border-radius:2px; }
+
+/*订单进度*/
+.order-progress{ position:relative; margin:20px 50px; height:55px; }
+    .order-progress li{ position:relative; float:left; width:20%; text-align:center; }
+    .order-progress.mini li{ width:25%; }
+    .order-progress li .progress{ display:block; margin-right:1px; line-height:20px; color:#424242; font-size:12px; text-align:center; background:#eee; }
+    .order-progress li .info{ display:block; margin-top:15px; line-height:20px; color:#757575; font-size:12px; text-align:center; }
+    .order-progress li.active .progress{ color:#fff; background:#83c44e; }
+    .order-progress li.first .progress{ border-top-left-radius:20px; border-bottom-left-radius:20px; }
+    .order-progress li.last .progress{ border-top-right-radius:20px; border-bottom-right-radius:20px; }

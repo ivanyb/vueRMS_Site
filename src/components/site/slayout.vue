@@ -14,9 +14,14 @@
                                 </div>
 
                                 <div id="menu" class="right-box">
-                                    <a href="/login.html">登录</a><strong>|</strong>
-                                    <a href="/register.html">注册</a><strong>|</strong>
-
+                                    <span v-show="islogined==0">
+                                        <router-link to="/site/account/login">登录</router-link><strong>|</strong>
+                                        <router-link to="/site/account/register">注册</router-link><strong>|</strong>
+                                    </span>
+                                     <span v-show="islogined==1">
+                                        <router-link to="/site/member/center">会员中心</router-link><strong>|</strong>
+                                        <a @click="logout">退出</a><strong>|</strong>
+                                    </span>
                                     <router-link to="/site/goods/car">
                                         <i class="iconfont icon-cart"></i>购物车(
                                         <span id="shoppingCartCount">
@@ -129,7 +134,7 @@
 
     export default {
         data() {
-            return {
+            return {                
                 dbuycount: 0
             }
         },
@@ -146,6 +151,16 @@
                 // }
                 this.dbuycount = 0;
                 return count;
+            },
+            islogined(){
+                var s = this.$store.state.islogined;
+                console.log('this.$store.getters.islogined='+this.$store.getters.islogined);
+                return  this.$store.getters.islogined;
+            }
+        },
+        methods:{
+            logout(){               
+                 this.$store.dispatch(this.$store.state.global.isloginedFlag,0);
             }
         },
         created() {
@@ -160,7 +175,7 @@
                 // console.log(this.dbuycount);
 
             });
-        }
+        }     
     }
 
 </script>
