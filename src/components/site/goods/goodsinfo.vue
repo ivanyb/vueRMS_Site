@@ -39,7 +39,7 @@
                                                 <div class="small-img">
                                                     <img :src="img.thumb_path" />
                                                 </div>
-                                            </li>                                            
+                                            </li>
                                         </ul>
                                     </div>
                                     <!--缩略图-->
@@ -158,6 +158,7 @@
     
     // 导入图片放大镜jquery插件
     import '../../../../statics/site/js/magnifier.js'; 
+
 
     export default {
         // directives:{

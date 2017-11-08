@@ -26,8 +26,8 @@
                         </div>
                     </div>
                     <!--购物车头部-->
-                    {{values}} <br>
-                    {{idlist}}
+                    <!--{{values}} <br>
+                    {{idlist}}-->
                     <!--商品列表-->
                     <div class="cart-box">
                         <input id="jsondata" name="jsondata" type="hidden">

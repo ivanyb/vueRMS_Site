@@ -85,11 +85,11 @@ module.exports={
           jQuery: "jquery"         
       }),
       // 代码压缩
-    //    new webpack.optimize.UglifyJsPlugin({
-    //     compress: {
-    //       warnings: false
-    //     }
-    // }),
+       new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+    }),
        new webpack.optimize.CommonsChunkPlugin({
           // 这里写的时候要和定义的时候相反，也就是定义的时候是先定义vendor1，那么在使用的时候就要后使用vendor1
             names: ['vendor5','vendor4','vendor2','vendor1']  

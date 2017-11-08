@@ -533,3 +533,10 @@ table { border-collapse:collapse; border-spacing:0; }
     .order-progress li.active .progress{ color:#fff; background:#83c44e; }
     .order-progress li.first .progress{ border-top-left-radius:20px; border-bottom-left-radius:20px; }
     .order-progress li.last .progress{ border-top-right-radius:20px; border-bottom-right-radius:20px; }
+
+/*商品Tab样式*/
+.goods-tab .tab-head{ display:block; height:42px; border-bottom:1px solid #f0f0f0; background:#fff; }
+.goods-tab .tab-head ul li{ float:left; margin-left:-1px; border-left:1px solid #f0f0f0; border-right:1px solid #f0f0f0; }
+.goods-tab .tab-head ul li a{ display:block; padding:0 30px; height:42px; line-height:42px; color:#555; font-size:14px; }
+.goods-tab .tab-head ul li a:hover,.goods-tab .tab-head ul li a.selected{ color:#fff; background:#34ad2a; }
+.goods-tab .tab-content{ display:none; }

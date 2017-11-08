@@ -155,7 +155,8 @@
             islogined(){
                 var s = this.$store.state.islogined;
                 console.log('this.$store.getters.islogined='+this.$store.getters.islogined);
-                return  this.$store.getters.islogined;
+                var islogin = this.$store.getters.islogined;
+                return  islogin?islogin:0;
             }
         },
         methods:{

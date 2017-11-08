@@ -67,7 +67,7 @@
             <div class="right-auto">
                 <div class="bg-wrap" style="min-height:765px;">
                     <div class="sub-tit">
-                        <a class="add" href="javascript:history.go(-1);"><i class="iconfont icon-reply"></i>返回</a>
+                        <a class="add" href="javascript:void(0)" @click="back"><i class="iconfont icon-reply"></i>返回</a>
                         <ul>
                             <li class="selected">
                                 <a href="javascript:;">查看订单</a>
@@ -234,6 +234,9 @@
             }
         },
         methods: {
+            back(){
+                this.$router.go(-1);
+            },
             complate(orderid){
                  this.$http.get('/site/validate/order/complate/'+orderid)
                 .then(res=>{

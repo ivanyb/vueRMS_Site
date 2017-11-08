@@ -7,8 +7,12 @@ import axios from 'axios';
 // Vue.prototype.dataAPI = axios.defaults.baseURL = 'http://139.199.192.48:6060';
 // Vue.prototype.siteServer = 'http://139.199.192.48/vuermssite';
 
-Vue.prototype.dataAPI = axios.defaults.baseURL = 'http://127.0.0.1:8899';
-Vue.prototype.siteServer = 'http://127.0.0.1:5009';
+// Vue.prototype.dataAPI = axios.defaults.baseURL = 'http://127.0.0.1:8899';
+// Vue.prototype.siteServer = 'http://127.0.0.1:5009';
+
+Vue.prototype.dataAPI = axios.defaults.baseURL = 'http://157.122.54.189:9095';
+Vue.prototype.siteServer = 'http://157.122.54.189:9092/vuermssite';
+
 //post请求内容类型
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 

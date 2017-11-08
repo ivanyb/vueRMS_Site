@@ -18,7 +18,7 @@
                     <p v-html="content"></p>
                 </div>
                 <!--评论-->
-                <div :class="lisactive[1]">  
+                <div :class="lisactive[1]">
                     <!--提交评论-->
                     <div class="commentpost">
                     <el-form :model="commentform" ref="commentform"  :rules="rules2">
